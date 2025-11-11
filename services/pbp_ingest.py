@@ -1,5 +1,6 @@
 # services/pbp_ingest.py
 
+import json
 import os
 from typing import Optional
 
@@ -241,6 +242,8 @@ def ingest_pbp(
     with engine.begin() as conn:
         for _, r in df.iterrows():
             payload = r.where(pd.notna(r), None).to_dict()
+            if payload.get("raw_json") is not None:
+                payload["raw_json"] = json.dumps(payload["raw_json"], ensure_ascii=False)
             conn.execute(
                 text("""
                     INSERT INTO nba.nba_pbp_events
