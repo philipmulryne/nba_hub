@@ -1,0 +1,30 @@
+/* General dropdown container */
+.dropdown-dark .Select-control,
+.dropdown-dark .Select-menu-outer,
+.dropdown-dark .Select-menu {
+  background-color: #222 !important;
+  color: #ffffff !important;
+  border-color: #555 !important;
+}
+
+/* Selected value text */
+.dropdown-dark .Select-value-label,
+.dropdown-dark .Select-placeholder {
+  color: #ffffff !important;
+}
+
+/* Options in the menu */
+.dropdown-dark .Select-option {
+  background-color: #222 !important;
+  color: #ffffff !important;
+}
+
+.dropdown-dark .Select-option.is-focused {
+  background-color: #333 !important;
+  color: #ffffff !important;
+}
+
+.dropdown-dark .Select-option.is-selected {
+  background-color: #007bff !important; /* highlight */
+  color: #ffffff !important;
+}
