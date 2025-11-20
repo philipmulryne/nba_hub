@@ -363,7 +363,7 @@ def fetch_pbp_and_display(n_clicks, selected_game_id, manual_game_id):
 
     # ✅ Store in PostgreSQL
     try:
-        rows = ingest_pbp(game_id, save_csv=True)
+        rows = ingest_pbp(game_id, df_raw=df, save_csv=True)
         status_msg = f"Loaded {len(df)} events for {game_id}. Stored {rows} rows in DB."
     except Exception as e:
         status_msg = f"Loaded {len(df)} events for {game_id}, but DB insert failed: {e}"
